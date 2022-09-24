@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "933413199733",
+    "project_id": "e-learning-b87b1",
+    "storage_bucket": "e-learning-b87b1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:933413199733:android:e64fe7fc4b41813a48fd3c",
+        "android_client_info": {
+          "package_name": "com.student.learn.internet"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "933413199733-79sli6ps2mq8a8ec98id3buk4rn3a9f7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC8g-Wgm8jq9B6lmEh5yOzIvk7kImvkcUM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "933413199733-79sli6ps2mq8a8ec98id3buk4rn3a9f7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
