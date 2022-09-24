@@ -7,7 +7,8 @@
         <entry key="..\:/Users/Devanshu/AndroidStudioProjects/ELearning/app/src/main/res/layout-w936dp/activity_authentication.xml" value="0.1287568306010929" />
         <entry key="..\:/Users/Devanshu/AndroidStudioProjects/ELearning/app/src/main/res/layout/activity_authentication.xml" value="0.17074275362318841" />
         <entry key="..\:/Users/Devanshu/AndroidStudioProjects/ELearning/app/src/main/res/layout/activity_home.xml" value="0.17074275362318841" />
-        <entry key="..\:/Users/Devanshu/AndroidStudioProjects/ELearning/app/src/main/res/layout/fragment_login.xml" value="0.17074275362318841" />
+        <entry key="..\:/Users/Devanshu/AndroidStudioProjects/ELearning/app/src/main/res/layout/fragment_forgot_password.xml" value="0.17074275362318841" />
+        <entry key="..\:/Users/Devanshu/AndroidStudioProjects/ELearning/app/src/main/res/layout/fragment_login.xml" value="0.2" />
       </map>
     </option>
   </component>
