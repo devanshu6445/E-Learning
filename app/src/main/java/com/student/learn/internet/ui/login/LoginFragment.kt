@@ -4,8 +4,10 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
@@ -26,12 +28,24 @@ class LoginFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         val email = view.findViewById<EditText>(R.id.userEmail)
         val password = view.findViewById<EditText>(R.id.userPassword)
-        viewModel.login(
-            email.text.toString(),
-            password.text.toString()
-        )
+        view.findViewById<Button>(R.id.signIn).setOnClickListener {
+            viewModel.login(
+                email.text.toString(),
+                password.text.toString()
+            )
+        }
         view.findViewById<TextView>(R.id.resetPassword).setOnClickListener {
             view.findNavController().navigate(R.id.action_loginFragment_to_forgotPasswordFragment)
+        }
+        viewModel.code.observe(viewLifecycleOwner){
+            when(it){
+                200 -> {
+                    Toast.makeText(this.requireContext(), viewModel.message, Toast.LENGTH_SHORT).show()}
+                100 -> {
+                    Toast.makeText(this.requireContext(), viewModel.message, Toast.LENGTH_SHORT).show()}
+                101 -> {
+                    Toast.makeText(this.requireContext(), viewModel.message, Toast.LENGTH_SHORT).show()}
+            }
         }
     }
 }

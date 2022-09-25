@@ -26,16 +26,30 @@ internal class AuthenticationRepository(private val listener: AuthenticationList
         listener.dataSavedSuccessfully()
     }
 
-    fun isEmailVerified(): Boolean {
-        return false
-    }
+    fun isEmailVerified(): Boolean? = auth.currentUser?.isEmailVerified
 
     fun loginWithEmailLink() {
 
     }
 
-    fun sendEmailToRequestForResetPassword(email: String) {
+    fun loginAnonymously(){
+        auth.signInAnonymously().addOnSuccessListener {
+            listener.loginIsSuccessful()
+        }.addOnFailureListener {
 
+        }.addOnCanceledListener {
+
+        }
+    }
+
+    fun sendEmailToRequestForResetPassword(email: String) {
+        auth.sendPasswordResetEmail(email).addOnSuccessListener {
+            listener.resetEmailSentSuccessfully()
+        }.addOnFailureListener {
+            it.message?.let { it1 -> listener.resetEmailSentFailed(it1) }
+        }.addOnCanceledListener {
+            listener.resetEmailSentFailed("Operation canceled by thr user")
+        }
     }
 
     fun createAccount(profileDetails: ProfileDetails) {
@@ -52,6 +66,8 @@ internal interface AuthenticationListener {
     fun loginIsSuccessful()
     fun loginIsFailed(message: String)
     fun loginIsCanceled()
+    fun resetEmailSentSuccessfully()
+    fun resetEmailSentFailed(message: String)
     fun dataSavedSuccessfully()
     fun dataSaveFailed()
 }
